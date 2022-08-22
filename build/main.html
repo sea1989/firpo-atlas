@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="login">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Атлас
+  </title>
+  <script src="./js/map.js" async=""></script>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="/buildOld/style.min.css">
+
+</head>
+
+<body class="body">
+  <main class="main">
+
+    <div class="pro-atlas--heading"></div>
+
+    <div class="container content__body--atlas">
+      <nav class="breadcrumbs">
+        <a class="button btn-nav" href="/">
+          <svg class="svg-nav icon" width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.2803 8.96967C5.5732 9.26256 5.5732 9.73744 5.2803 10.0303C4.9874 10.3232 4.5126 10.3232 4.2197 10.0303L0.2197 6.0303C-0.0732002 5.7374 -0.0732002 5.2626 0.2197 4.9697L4.2197 0.969702C4.5126 0.676802 4.9874 0.676802 5.2803 0.969702C5.5732 1.2626 5.5732 1.7374 5.2803 2.0303L2.5607 4.75H12.25C12.6642 4.75 13 5.0858 13 5.5C13 5.9142 12.6642 6.25 12.25 6.25H2.5607L5.2803 8.96967Z" fill="#224390"></path>
+          </svg>На Главную</a>
+      </nav>
+
+      <h2 class="title atlas__title">Атлас доступных профессий</h2>
+
+      <form action="/news/news.html" method="get">
+        <div class="filter atlas__filter">
+          <div class="filter__row">
+            <div class="filter__search">
+              <div class="field field--type-search atlas__filter-field">
+                <label class="field__label visually-hidden" for="filter-search">брянская область</label>
+                <div class="field__field">
+                  <input type="search" name="text" id="filter-search" placeholder="Поиск по назанию" value="" class="">
+                </div>
+              </div>
+              <button class="button atlas__search-button" type="submit">Поиск</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <ul class="atlas-filter">
+        <li class="atlas-filter__item">
+          <a href="#" class="atlas-filter__link">Регион</a>
+        </li>
+        <li href="#" class="atlas-filter__item">
+          <a class="atlas-filter__link">Профессия</a>
+        </li>
+        <li href="#" class="atlas-filter__item">
+          <a class="atlas-filter__link">ПОО</a>
+        </li>
+        <li href="#" class="atlas-filter__item">
+          <a class="atlas-filter__link">Фильтр <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6.93335" y="6.40039" width="2.13333" height="9.6" rx="1.06667" fill="#224390"></rect>
+              <rect x="0.533447" y="2.41455" width="2.13333" height="11.0163" rx="1.06667" transform="rotate(-39.1664 0.533447 2.41455)" fill="#224390"></rect>
+              <rect width="2.13333" height="11.0163" rx="1.06667" transform="matrix(-0.775315 -0.631574 -0.631574 0.775315 15.5449 2.41455)" fill="#224390"></rect>
+              <rect x="15.4666" y="1.06689" width="2.13333" height="14.9333" rx="1.06667" transform="rotate(90 15.4666 1.06689)" fill="#224390"></rect>
+              <path d="M8 10.1343L14.9282 2.53428H1.0718L8 10.1343Z" fill="#224390"></path>
+            </svg>
+          </a>
+        </li>
+
+      </ul>
+
+      <h2 class="title atlas__subtitle">Карта Российской Федерации</h2>
+
+      <div class="wrapper">
+        <div id="map"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer page__footer">
+    <div class="bar-contacts footer__contacts">
+      <div class="container">
+        <div class="bar-contacts__row">
+
+          <a class="contact bar-contacts__contact" href="tel:+7 (985) 457-67-15">
+            <svg class="icon icon--call contact__icon" viewBox="0 0 34 34" width="34" height="34">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="m26.226 21.64 6.882 4.59a1.998 1.998 0 0 1 .606 2.694l-1.73 2.876a4.056 4.056 0 0 1-2.403 1.85c-.868.236-1.764.353-2.663.349-3.907 0-9.591-2.054-17.227-9.689C.09 14.71-.688 8.194.348 4.418A4.06 4.06 0 0 1 2.2 2.016L5.077.287A1.998 1.998 0 0 1 7.77.893l4.59 6.882a2.01 2.01 0 0 1-.438 2.69l-2.575 2.004a.858.858 0 0 0-.227 1.102l.21.382c.688 1.261 1.548 2.835 4.717 6.005 3.168 3.17 4.741 4.028 6.005 4.717l.382.21a.857.857 0 0 0 1.098-.23l2.005-2.578a2.009 2.009 0 0 1 2.69-.437Zm4.785 9.58 1.727-2.877a.866.866 0 0 0-.263-1.17l-6.881-4.589a.873.873 0 0 0-1.168.19l-2.003 2.576a1.983 1.983 0 0 1-2.546.525l-.372-.205h-.001c-1.327-.725-2.98-1.626-6.265-4.91-3.285-3.286-4.186-4.938-4.91-6.266v-.001l-.205-.372a1.983 1.983 0 0 1 .525-2.545l2.576-2.004a.872.872 0 0 0 .19-1.167L9.321 5.267 6.829 1.524A.867.867 0 0 0 5.66 1.26L2.782 2.987a2.933 2.933 0 0 0-1.34 1.73c-.958 3.487-.165 9.576 9.05 18.791 9.216 9.216 15.305 10.009 18.791 9.052a2.928 2.928 0 0 0 1.728-1.34Zm-2.113-15.919a9.643 9.643 0 0 0-9.632-9.631.567.567 0 1 1 0-1.134c5.942.007 10.758 4.823 10.765 10.765a.567.567 0 1 1-1.133 0ZM19.266 9.07a6.24 6.24 0 0 1 6.232 6.233.567.567 0 0 0 1.133 0 7.374 7.374 0 0 0-7.365-7.366.567.567 0 1 0 0 1.133Zm2.833 6.232a2.836 2.836 0 0 0-2.833-2.832.567.567 0 1 1 0-1.134 3.97 3.97 0 0 1 3.966 3.966.567.567 0 0 1-1.133 0Z">
+              </path>
+            </svg>
+            <div class="contact__caption">
+              <div class="contact__text">+7 (985) 457-67-15</div>
+              <div class="contact__label">Мы всегда на связи</div>
+            </div>
+          </a>
+
+          <a class="contact bar-contacts__contact" href="mailto:info@fmc-spo.ru">
+            <svg class="icon icon--email contact__icon" viewBox="0 0 34 34" width="34" height="34">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.7 4h30.6c.939 0 1.7.76 1.7 1.696v22.608c0 .937-.761 1.696-1.7 1.696H1.7C.761 30 0 29.24 0 28.304V5.696C0 4.759.761 4 1.7 4Zm30.6 24.87a.566.566 0 0 0 .567-.566V5.696a.566.566 0 0 0-.567-.566H1.7a.566.566 0 0 0-.567.566v22.608c0 .313.254.566.567.566h30.6ZM30.802 6.393a.567.567 0 0 1 .93.482.564.564 0 0 1-.201.384L18.458 18.212a2.268 2.268 0 0 1-2.916 0L2.469 7.26a.564.564 0 0 1 .17-.964.568.568 0 0 1 .559.098L16.27 17.347a1.136 1.136 0 0 0 1.458 0L30.802 6.393ZM10.9 18.135a.568.568 0 0 0-.547.175L2.42 26.788a.564.564 0 0 0 .282.947c.2.044.41-.023.547-.176l7.933-8.478a.564.564 0 0 0-.282-.946Zm12.202 0c.2-.045.41.022.547.175l7.933 8.478a.568.568 0 0 1-.828.771l-7.934-8.478a.564.564 0 0 1 .282-.946Z">
+              </path>
+            </svg>
+            <div class="contact__caption">
+              <div class="contact__text">info@fmc-spo.ru</div>
+              <div class="contact__label">По всем вопросам</div>
+            </div>
+          </a>
+
+          <a class="contact bar-contacts__contact" href="https://yandex.ru/maps/-/CCUN7YBQpA" target="_blank" rel="nofollow noopener">
+            <svg class="icon icon--pin contact__icon" viewBox="0 0 34 34" width="34" height="34">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M17.001 0a11.97 11.97 0 0 1 8.486 3.488c4.195 4.161 4.716 11.991 1.115 16.754L17.002 34 7.385 20.223C3.8 15.479 4.321 7.649 8.516 3.488A11.969 11.969 0 0 1 17 0Zm0 31.818 8.585-12.302c3.269-4.323 2.802-11.394-.984-15.15a10.723 10.723 0 0 0-7.6-3.124A10.72 10.72 0 0 0 9.4 4.366c-3.786 3.756-4.252 10.827-.999 15.131l8.6 12.321Zm-4.27-20.02c0-2.396 1.966-4.347 4.381-4.347s4.38 1.95 4.38 4.347c0 2.396-1.965 4.346-4.38 4.346s-4.38-1.95-4.38-4.346Zm1.252 0c0 1.711 1.404 3.104 3.129 3.104s3.129-1.393 3.129-3.104c0-1.712-1.404-3.105-3.129-3.105s-3.129 1.393-3.129 3.105Z">
+              </path>
+            </svg>
+            <div class="contact__caption">
+              <div class="contact__text">Схема проезда</div>
+              <address class="contact__label">г. Москва, ул. Большая Грузинская, д. 12, стр. 2</address>
+            </div>
+          </a>
+
+          <!-- Задать вопрос -->
+          <a class="button bar-contacts__button popup-modal" href="#question" role="button">Задать вопрос</a>
+
+          <div id="question" class="mfp-hide white-popup-block">
+            <button title="Закрыть" type="button" class="mfp-close">×</button>
+            <div class="mfp-title">
+              <h2>Задать вопрос</h2>
+            </div>
+            <div>
+              <form name="" id="" class="question-form" enctype="multipart/form-data" method="post" action="/netcat/add.php">
+                <div id="nc_moderate_form">
+                  <div class="nc_clear"></div>
+                  <input name="admin_mode" type="hidden" value="">
+                  <input name="catalogue" type="hidden" value="4">
+                  <input name="cc" type="hidden" value="152">
+                  <input name="sub" type="hidden" value="123">
+                  <input name="posting" type="hidden" value="1">
+                  <input name="curPos" type="hidden" value="0">
+                  <input name="f_Parent_Message_ID" type="hidden" value="">
+                  <input type="hidden" name="nc_token" value="7aac62340a45d98746c7013bf7043be9"> <input type="hidden" name="f_Checked" value="1">
+                </div>
+
+                <div class="field field--type-search filter__search-field">
+                  <label class="field__label visually-hidden" for="f_Email">Email</label>
+                  <div class="field__field">
+                    <input name="f_Email" maxlength="255" size="50" type="text" id="f_Email" placeholder="Email" autocomplete="off" required="" value="">
+                  </div>
+                </div>
+
+                <div class="field field--type-search filter__search-field">
+                  <label class="field__label visually-hidden" for="f_Fio">Ваше имя</label>
+                  <div class="field__field">
+                    <input name="f_Fio" maxlength="255" size="50" type="text" id="f_Fio" placeholder="Ваше имя" autocomplete="off" required="" value="">
+                  </div>
+                </div>
+
+                <div class="field field--type-search filter__search-field">
+                  <label class="field__label visually-hidden" for="f_Question">Вопрос</label>
+                  <div class="field__field">
+                    <textarea id="f_Question" name="f_Question" rows="5" cols="60" placeholder="Вопрос" autocomplete="off" required=""></textarea>
+                  </div>
+                </div>
+
+
+
+                <div class="row">
+                  <div class="col-xl-4 col-sm-12"><input type="submit" class="button filter__search-button" value="Отправить"></div>
+                  <div class="col-xl-8 col-sm-12"><em class="rules">* Нажимая на кнопку вы даёте свое согласие на
+                      обработку персональных данных</em></div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- footer menu -->
+    <div class="footer__main">
+      <div class="container">
+
+        <div class="footer__main-row">
+          <div class="footer__main-col">
+            <div class="footer__title">Деятельность</div>
+            <nav class="menu-footer footer__menu">
+              <div class="menu-footer__row">
+
+                <div class="menu-footer__col">
+                  <ul class="menu-footer__items">
+
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/roditelyam-i-abiturientam/">Родителям и абитуриентам</a></li>
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/rabochaya-gruppa-po-inklyuzivnomu-obrazovaniyu/">Рабочая группа по инклюзивному
+                        образованию</a></li>
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/rop/">Реестр
+                        образовательных программ</a></li>
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/webinars/">Вебинары</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="menu-footer__col">
+                  <ul class="menu-footer__items">
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/rabotodatelyam/">Работодателям</a></li>
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/rumc/">РУМЦ</a></li>
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/bpoo/">БПОО</a></li>
+                    <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/documents/">Документы</a>
+                    </li>
+
+                  </ul>
+                </div>
+
+              </div>
+            </nav>
+          </div>
+
+          <div class="footer__main-col">
+            <div class="footer__title">Информация</div>
+            <nav class="menu-footer footer__menu">
+              <ul class="menu-footer__items">
+                <li class="menu-footer__item"><a class="menu-footer__link" href="/about/">О нас</a></li>
+                <li class="menu-footer__item"><a class="menu-footer__link" href="/news/">Новости</a></li>
+                <li class="menu-footer__item"><a class="menu-footer__link" href="/professional/">Повышение
+                    квалификации</a></li>
+                <li class="menu-footer__item"><a class="menu-footer__link" href="/activity/">Деятельность</a></li>
+                <li class="menu-footer__item"><a class="menu-footer__link" href="/contacts/">Контакты</a></li>
+                <li class="menu-footer__item"><a class="menu-footer__link" href="/hotlines/">Горячие линии</a></li>
+
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer__main-col">
+            <div class="footer__title">Дополнительно</div>
+            <nav class="menu-footer footer__menu">
+              <ul class="menu-footer__items">
+                <li class="menu-footer__item"><a class="menu-footer__link" href="/policy/">Соглашение об использовании
+                    сайта</a></li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-row">
+          <p class="footer__copyright">©&nbsp;2019-2022 Федеральный методический центр по&nbsp;инклюзивному образованию
+          </p>
+          <p class="footer__developed"><a href="https://firpo.ru" target="_blank">Разработано в&nbsp;ИРПО</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- для карты -->
+
+  <script src="./js/index.js" defer=""></script>
+
+  <!-- остальные js -->
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/slick.min.js"></script>
+  <script src="./js/jquery.maskedinput.min.js"></script>
+  <script src="./js/magnific-popup.min.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>
